@@ -10,7 +10,6 @@ public class ProcessTasksUsingServers {
         PriorityQueue<Pair> available = new PriorityQueue<>(
                 (a, b) -> a.server != b.server ? a.server - b.server : a.index - b.index
         );
-
         PriorityQueue<Pair> busy = new PriorityQueue<>(
                 (a, b) -> Math.toIntExact(a.finishTime != b.finishTime ? a.finishTime - b.finishTime
                         : (a.server != b.server ? a.server - b.server : a.index - b.index))

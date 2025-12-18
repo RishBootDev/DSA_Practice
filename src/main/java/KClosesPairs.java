@@ -25,14 +25,12 @@ class Solution {
 
             pairs.add(new Pair(a, b));
         }
-
         return pairs.size();
     }
 
     static class Pair {
         int a;
         int b;
-
         public Pair(int a, int b) {
             this.a = a;
             this.b = b;

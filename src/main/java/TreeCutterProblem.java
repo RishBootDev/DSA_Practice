@@ -52,7 +52,11 @@ public class TreeCutterProblem {
 
     public static void main(String[] args) {
         int[] arr ={1,7,6,3,4,7};
+        int[] barr={20, 15, 10, 17};
+        int[] carr={4, 42, 40, 26, 46};
         System.out.println(treeCutterByLinearSearch(arr,8));
         System.out.println(treeCutterByBinarySearch(arr,8));
+        System.out.println(treeCutterByBinarySearch(barr,7));
+        System.out.println(treeCutterByBinarySearch(carr,20));
     }
 }

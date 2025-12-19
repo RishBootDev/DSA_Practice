@@ -11,7 +11,6 @@ public class BinaryTreeToBST {
         return changeBST(arr,0,arr.size()-1);
 
     }
-
     public void inorder(Node root,ArrayList<Integer> arr){
         if(root==null)  return;
 

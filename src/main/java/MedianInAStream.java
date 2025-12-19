@@ -3,7 +3,6 @@ import java.util.Collections;
 
 public class MedianInAStream {
 
-
     public ArrayList<Double> getMedian(int[] arr) {
 
         ArrayList<Double> ans=new ArrayList<>();

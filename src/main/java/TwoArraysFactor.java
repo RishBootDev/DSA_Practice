@@ -10,17 +10,13 @@ public class TwoArraysFactor {
         Collections.sort(a);
 
         int count=0;
-
         for(int c: set){
-
             for (int x: a) {
                  if(c%x!=0) continue;
             }
             count++;
         }
-
         return count;
-
 
     }
 

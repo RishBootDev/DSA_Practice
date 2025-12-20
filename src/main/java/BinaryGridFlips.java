@@ -1,3 +1,4 @@
+
 public class BinaryGridFlips {
 
     public int minFlips(int[][] grid) {
@@ -10,7 +11,6 @@ public class BinaryGridFlips {
             }
             countRow+=getFlips(sb.toString());
         }
-
 
         int countColumn=0;
         for (int i = 0; i < grid.length; i++) {

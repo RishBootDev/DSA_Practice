@@ -14,7 +14,6 @@ public class MaximizeHappiness {
         while(k-->0){
 
             int get=pq.poll()-temp;
-
             if(get<0) get=0;
 
             ans+=get;

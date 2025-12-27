@@ -65,8 +65,6 @@ public class FlatteningLinkedList {
         }
     }
 
-
-
     public static Node flatten(Node root) {
 
         if (root == null) return root;
@@ -83,7 +81,6 @@ public class FlatteningLinkedList {
                 bottom = bottom.bottom;
             }
 
-           // System.out.println(temp.data);
             temp.next = next;
             temp = temp.next;
         }
@@ -132,5 +129,4 @@ public class FlatteningLinkedList {
                         '}';
             }
         }
-
 }

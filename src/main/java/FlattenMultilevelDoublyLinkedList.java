@@ -7,17 +7,18 @@ public class FlattenMultilevelDoublyLinkedList {
 
     }
 
-    public Node helper(Node head){
+    public Node helper(Node head) {
 
-        if(head == null) return null;
-        if (head.next == null) return head;
+        if (head == null) return null;
 
-        Node next = head.next;
+        Node curr = head;
         Node tail = head;
 
         if (head.child != null) {
+
             Node child = head.child;
             Node childTail = helper(child);
+            Node next = head.next;
 
             head.next = child;
             child.prev = head;
@@ -26,11 +27,14 @@ public class FlattenMultilevelDoublyLinkedList {
             if (next != null) {
                 childTail.next = next;
                 next.prev = childTail;
+                tail = helper(next);
+            } else {
+                tail = childTail;
             }
 
-            tail = childTail;
+        } else if (head.next != null) {
+            tail = helper(head.next);
         }
-        tail = helper(next);
 
         return tail;
     }

@@ -59,19 +59,16 @@ public class SpiralMatrix {
                 matrix[a][i] = temp++;
             }
             a++;
-
             for (int i = a; i <= c; i++) {
                 matrix[i][b] = temp++;
             }
             b--;
-
             if (a <= c) {
                 for (int i = b; i >= d; i--) {
                     matrix[c][i] = temp++;
                 }
                 c--;
             }
-
             if (d <= b) {
                 for (int i = c; i >= a; i--) {
                     matrix[i][d] = temp++;

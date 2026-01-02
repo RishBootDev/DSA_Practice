@@ -1,6 +1,5 @@
 public class SwapNodesK {
 
-
     public ListNode swapNodes(ListNode head, int k) {
 
         if (head == null || head.next == null) return head;
@@ -54,7 +53,6 @@ public class SwapNodesK {
         return temp;
 
     }
-
 
     static class ListNode {
         int val;

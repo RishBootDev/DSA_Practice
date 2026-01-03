@@ -12,7 +12,6 @@ public class WordsVerticallyPrinting {
         List<String> ans = new ArrayList<>();
 
         for (int i = 0; i < mx; ++i) {
-
             StringBuilder sb = new StringBuilder();
 
             for (String word : words)

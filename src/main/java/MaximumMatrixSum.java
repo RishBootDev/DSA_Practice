@@ -15,7 +15,6 @@ public class MaximumMatrixSum {
                 min = Math.min(min, absVal);
             }
         }
-
         if (count % 2 == 0) return sum;
         else return sum - 2L * min;
     }

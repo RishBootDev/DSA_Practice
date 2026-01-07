@@ -8,7 +8,6 @@ public class ConsecutiveBinaryNumbers {
         System.out.println(Integer.toBinaryString(10));
     }
 
-
     public int concatenatedBinary(int n) {
 
         StringBuilder sb = new StringBuilder();

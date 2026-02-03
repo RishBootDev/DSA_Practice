@@ -17,8 +17,6 @@ public class RandomPickWithWeight {
 
     public static void main(String[] args) {
         RandomPickWithWeight rd= new RandomPickWithWeight(new int [2]);
-
-
     }
 
 }

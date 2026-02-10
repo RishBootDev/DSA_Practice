@@ -3,7 +3,6 @@ import java.util.Map;
 
 public class AnagramThinking {
 
-    class Solution {
         public int minSteps(String s, String t) {
             Map<Character, Integer> smp = new HashMap<>();
             Map<Character, Integer> tmp = new HashMap<>();
@@ -30,10 +29,5 @@ public class AnagramThinking {
 
             return s.length() - cnt;
         }
-    }
 
-
-    public static void main(String[] args) {
-
-    }
 }

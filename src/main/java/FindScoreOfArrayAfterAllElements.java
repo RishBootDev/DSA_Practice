@@ -4,7 +4,6 @@ import java.util.PriorityQueue;
 
 public class FindScoreOfArrayAfterAllElements {
 
-
     // this is the bruteforce approach of this problem and hardly meets the constraints
     public long findScore1(int[] nums) {
 

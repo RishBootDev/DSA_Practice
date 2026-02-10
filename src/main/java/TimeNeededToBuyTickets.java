@@ -30,13 +30,9 @@ public class TimeNeededToBuyTickets {
                 flag = false;
                 break;
             }
-
             queue.add(temp);
         }
-
         return 0;
-
-
     }
 
     static class Pair{

@@ -29,5 +29,4 @@ public class AnagramThinking {
 
             return s.length() - cnt;
         }
-
 }

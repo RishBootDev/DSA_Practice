@@ -21,8 +21,8 @@ public class MinimumOperationsToMakeBinaryStringEqualTo1 {
         if(i+2 >= nums.length) return false;
 
         for (int j = i; j <=i+2 ; j++) {
-            if (nums[i] == 0) nums[i] = 1;
-            else nums[i] = 0;
+            if (nums[j] == 0) nums[j] = 1;
+            else nums[j] = 0;
         }
         return true;
     }

@@ -38,7 +38,6 @@ public class SubsetSumProblem {
 
             result = take || notTake;
         }
-
         dp[sum][i] = result ? 1 : 0;
 
         return result;

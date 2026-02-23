@@ -7,7 +7,6 @@ public class SubarrayProductLessThanK {
         for (int start = 0, end = 0; end < n; end++) {
 
             p *= a[end];
-
             while (start < end && p >= k)
                 p /= a[start++];
 
@@ -16,7 +15,6 @@ public class SubarrayProductLessThanK {
                 res += len;
             }
         }
-
         return res;
     }
 

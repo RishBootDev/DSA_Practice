@@ -16,4 +16,9 @@ public class SearchInSortedMatrix {
         return false;
 
     }
+
+    public static void main(String[] args) {
+        char ch = 'a';
+        System.out.println(Integer.toBinaryString((int)ch));
+    }
 }

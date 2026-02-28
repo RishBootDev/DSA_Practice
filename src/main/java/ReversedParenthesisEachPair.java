@@ -15,7 +15,6 @@ public class ReversedParenthesisEachPair {
             } else {
 
                 StringBuilder sb = new StringBuilder();
-
                 while (!stack.isEmpty() && stack.peek() != '(') {
                     sb.append(stack.pop());
                 }

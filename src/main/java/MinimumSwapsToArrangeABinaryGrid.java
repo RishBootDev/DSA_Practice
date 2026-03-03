@@ -49,6 +49,7 @@ public class MinimumSwapsToArrangeABinaryGrid {
 class Solution6 {
 
     private static final String API_KEY = "my api key";
+    private static final String api = "0e0fac0115ca4157b70faf01e30adb1f";
     private static final String URL =
             "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + API_KEY;
 
@@ -98,9 +99,83 @@ class Solution6 {
     }
     public static void main(String[] args) {
         Solution6 sol = new Solution6();
-        System.out.println(sol.calculate("3+2*2"));
-        System.out.println(sol.calculate(" 3/2 "));
-        System.out.println(sol.calculate(" 3+5 / 2 "));
+//        System.out.println(sol.calculate("3+2*2"));
+//        System.out.println(sol.calculate(" 3/2 "));
+//        System.out.println(sol.calculate(" 3+5 / 2 "));
+
+        System.out.println(sol.show("india"));
+        System.out.println(sol.getTopHeadlines("india"));
+    }
+
+    public String getTopHeadlines(String country) {
+        try {
+
+
+            String jsonBody = "{"
+                    + "\"country\": \"" + country + "\","
+                    + "\"apiKey\": \"" + api + "\""
+                    + "}";
+
+            HttpClient client = HttpClient.newHttpClient();
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://newsapi.org/v2/everything"))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                    .build();
+
+            HttpResponse<String> response =
+                    client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            String body = response.body();
+
+
+            return body;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error occurred";
+        }
+    }
+
+    public int show(String s) {
+        try {
+
+            String jsonBody = "{"
+                    + "\"country\": \"" + s + "\","
+                    + "\"apiKey\": \"" + api + "\""
+                    + "}";
+
+            HttpClient client = HttpClient.newHttpClient();
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://newsapi.org/v2/everything"))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                    .build();
+
+            HttpResponse<String> response =
+                    client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            String body = response.body();
+
+            int titleIndex = body.indexOf("\"title\":");
+            if (titleIndex == -1) return 0;
+
+            int firstQuote = body.indexOf("\"", titleIndex + 8);
+            int secondQuote = body.indexOf("\"", firstQuote + 1);
+
+            if (firstQuote == -1 || secondQuote == -1) return 0;
+
+            String title = body.substring(firstQuote + 1, secondQuote).trim();
+
+
+            return title.length();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 
 

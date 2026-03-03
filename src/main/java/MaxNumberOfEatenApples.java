@@ -15,7 +15,6 @@ class MaxNumberOfEatenApples{
     public int eatenApples(int[] apples, int[] days) {
 
         PriorityQueue<Pair> pq = new PriorityQueue<>((p1, p2) -> p1.day - p2.day);
-
         int count = 0;
         int day = 0;
         int n = apples.length;
@@ -34,15 +33,12 @@ class MaxNumberOfEatenApples{
                 Pair current = pq.poll();
                 current.a--;
                 count++;
-
                 if (current.a > 0) {
                     pq.add(current);
                 }
             }
-
             day++;
         }
-
         return count;
     }
 }

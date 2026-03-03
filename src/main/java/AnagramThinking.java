@@ -1,9 +1,11 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class AnagramThinking {
 
-        public int minSteps(String s, String t) {
+        public int minSteps(@NotNull String s, String t) {
             Map<Character, Integer> smp = new HashMap<>();
             Map<Character, Integer> tmp = new HashMap<>();
             int cnt = 0;

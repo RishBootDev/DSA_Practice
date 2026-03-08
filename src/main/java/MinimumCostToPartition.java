@@ -6,8 +6,7 @@ public class MinimumCostToPartition {
 
     public long solve(String s, int l, int r, int encCost, int flatCost) {
 
-        int length = r - l + 1;
-
+        int length = s.length();
         int ones = 0;
         for (int i = l; i <= r; i++) {
             if (s.charAt(i) == '1') {
@@ -16,7 +15,6 @@ public class MinimumCostToPartition {
         }
 
         long directCost;
-
         if (ones == 0) {
             directCost = flatCost;
         } else {
@@ -24,13 +22,9 @@ public class MinimumCostToPartition {
         }
 
         long ans = directCost;
-
         if (length % 2 == 0) {
-
             int mid = (l + r) / 2;
-
             long splitCost = solve(s, l, mid, encCost, flatCost) + solve(s, mid + 1, r, encCost, flatCost);
-
             ans = Math.min(ans, splitCost);
         }
 

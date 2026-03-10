@@ -5,9 +5,6 @@ import java.util.List;
 public class AlmostSorted {
 
 
-
-
-
     public static void almostSorted(List<Integer> arr) {
 
         List<Integer> list = new ArrayList<>(arr);

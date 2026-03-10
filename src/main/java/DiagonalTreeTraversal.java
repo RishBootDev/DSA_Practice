@@ -4,7 +4,6 @@ import java.util.List;
 public class DiagonalTreeTraversal {
 
     public ArrayList<Integer> diagonal(Node root) {
-        // add your code here.
 
         ArrayList<Integer> ans = new ArrayList<>();
         List<Node> list = new ArrayList<>();

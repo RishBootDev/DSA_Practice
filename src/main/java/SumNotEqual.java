@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 public class SumNotEqual {
@@ -37,12 +38,27 @@ public class SumNotEqual {
             }
 
             Arrays.sort(arr, Comparator.comparingInt(a -> a.val));
-
             int i = arr[n-1].idx;
             int j = arr[n-2].idx;
             int k = arr[0].idx;
 
             System.out.println(i + " " + j + " " + k);
         }
+
+
+    }
+
+    public static long getWays(int n, List<Long> c) {
+
+        long[] dp = new long[n + 1];
+        dp[0] = 1;
+
+        for (long coin : c) {
+            for (int i = (int) coin; i <= n; i++) {
+                dp[i] += dp[Math.toIntExact(i - coin)];
+            }
+        }
+
+        return dp[n];
     }
 }

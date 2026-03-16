@@ -30,4 +30,9 @@ public class RunningMedianFromArray {
 
         return ans;
     }
+
+    public static void test() {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+    }
 }

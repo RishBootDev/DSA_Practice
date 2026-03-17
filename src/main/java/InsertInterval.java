@@ -27,9 +27,7 @@ public class InsertInterval {
                 b = Math.max(b, d);
             }
         }
-
         list.add(new int[]{a, b});
-
         return list.toArray(new int[list.size()][]);
     }
 }

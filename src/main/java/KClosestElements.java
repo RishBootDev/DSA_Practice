@@ -23,10 +23,7 @@ public class KClosestElements {
 
             list.add(pq.poll());
         }
-
         Collections.sort(list);
-
         return list;
-
     }
 }

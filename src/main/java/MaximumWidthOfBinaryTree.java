@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,7 +20,9 @@ public class MaximumWidthOfBinaryTree {
         }
     }
 
-    public int widthOfBinaryTree(TreeNode root) {
+
+    // this solution is also accepted but it is like a bruteforce and not very efficient and optimal due to adding null and placing null so we have a better approach
+    public int widthOfBinaryTree1(TreeNode root) {
 
         List<List<TreeNode>> levels=levelOrder(root);
 

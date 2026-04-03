@@ -27,7 +27,7 @@ public class ReduceIt {
         }
 
         List<Integer> result = new ArrayList<>(stack);
-        System.out.println();
+        System.out.println(result);
     }
 
     public static void main(String[] args) {

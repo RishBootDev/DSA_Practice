@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class AbsoluteDifferenceTemp {
 
 
+    // this is the brute force approach and passed 10/ 100 test cases
     public static ArrayList<Long> absDifOne(long n) {
 
         ArrayList<Long> ans = new ArrayList<>();

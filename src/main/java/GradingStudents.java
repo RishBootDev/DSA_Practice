@@ -20,8 +20,6 @@ public class GradingStudents {
             }
 
         }
-
         return ans;
-
     }
 }

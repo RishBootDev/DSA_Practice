@@ -52,6 +52,4 @@ public class HIndex {
 
         return ans;
     }
-
-
 }

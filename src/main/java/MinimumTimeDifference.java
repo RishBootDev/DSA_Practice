@@ -4,6 +4,13 @@ import java.util.List;
 
 public class MinimumTimeDifference {
 
+    public static void main(String[] args) {
+
+        char ch = 'z' - 'b';
+        System.out.println(ch);
+
+    }
+
     public int findMinDifference(List<String> timePoints) {
 
         Collections.sort(timePoints, (a, b) -> {

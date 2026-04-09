@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 // this is a working approach but got memory limit exceeded
 class RLEIterator {
 

@@ -31,6 +31,30 @@ class RLEIterator {
     }
 }
 
+// this is accepted solution
+class RleIterator{
+    private int [] encoding;
+    private int idx;
+
+    public RleIterator(int [] encoding) {
+        this.encoding = encoding;
+        this.idx = 0;
+    }
+
+    public int next(int n) {
+
+        while (this.idx < encoding.length && n > encoding[idx]) {
+            n -= encoding[idx];
+            this.idx += 2;
+        }
+
+        if (this.idx >= encoding.length) return -1;
+
+        encoding[idx] -= n;
+        return encoding[idx + 1];
+    }
+}
+
 /**
  * Your RLEIterator object will be instantiated and called as such:
  * RLEIterator obj = new RLEIterator(encoding);

@@ -3,6 +3,8 @@ import java.util.Map;
 
 import java.util.*;
 
+
+// this works but gives time limit exceeded after passing 88 / 100 test cases.
 class FoodRatings {
 
     private Map<String, Pair> map;
@@ -81,6 +83,66 @@ class FoodRatings {
         public Pair(String name, int rating) {
             this.name = name;
             this.rating = rating;
+        }
+    }
+}
+
+
+// this is the final optimized approach and this got accepted as well
+class FoodRatings2 {
+
+    private Map<String, TreeSet<Pair>> cuisineMap;
+    private Map<String, Pair> foodMap;
+
+    public FoodRatings2(String[] foods, String[] cuisines, int[] ratings) {
+
+        cuisineMap = new HashMap<>();
+        foodMap = new HashMap<>();
+
+        for (int i = 0; i < foods.length; i++) {
+
+            cuisineMap.putIfAbsent(cuisines[i], new TreeSet<>());
+
+            Pair pair = new Pair(foods[i], cuisines[i], ratings[i]);
+
+            cuisineMap.get(cuisines[i]).add(pair);
+            foodMap.put(foods[i], pair);
+        }
+    }
+
+    public void changeRating(String food, int newRating) {
+
+        Pair old = foodMap.get(food);
+
+        TreeSet<Pair> set = cuisineMap.get(old.cuisine);
+        set.remove(old);
+
+        Pair updated = new Pair(food, old.cuisine, newRating);
+
+        set.add(updated);
+        foodMap.put(food, updated);
+    }
+
+    public String highestRated(String cuisine) {
+        return cuisineMap.get(cuisine).first().name;
+    }
+
+    static class Pair implements Comparable<Pair> {
+        String name;
+        String cuisine;
+        int rating;
+
+        public Pair(String name, String cuisine, int rating) {
+            this.name = name;
+            this.cuisine = cuisine;
+            this.rating = rating;
+        }
+
+        public int compareTo(Pair o) {
+            if (this.rating != o.rating) {
+                return o.rating - this.rating;
+            }
+            return this.name.compareTo(o.name);
         }
     }
 }

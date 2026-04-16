@@ -17,6 +17,8 @@ public class ReplaceElementsInArray {
             int num2 = op[1];
 
             int idx = map.get(num1);
+            map.remove(num1);
+            map.put(num2, idx);
             nums[idx] = num2;
         }
 

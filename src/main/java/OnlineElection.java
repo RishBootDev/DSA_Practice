@@ -1,6 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+// this is the hashing approach first came to my mind but it passed only 86 / 98 testcases
 public class OnlineElection {
 
     private int[] persons;

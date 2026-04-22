@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MinimumPathFallingSum {
+public class MinimumPathFallingSum2 {
 
 
     // i have memoized the question but it got me time limit exceeded and

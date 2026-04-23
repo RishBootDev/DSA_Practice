@@ -55,7 +55,7 @@ public class FlatteningLinkedList {
         n19.bottom = new Node(22);
         n19.bottom.bottom = new Node(50);
 
-        Solution sol = new Solution();
+        MeasureDistance sol = new MeasureDistance();
         Node flatHead = flatten(head);
 
         Node curr = flatHead;

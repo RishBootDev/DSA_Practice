@@ -11,7 +11,6 @@ public class MostFrequentIds {
         PriorityQueue<long[]> pq = new PriorityQueue<>(
                 (a, b) -> Long.compare(b[0], a[0])
         );
-
         long[] ans = new long[nums.length];
 
         for (int i = 0; i < nums.length; i++) {

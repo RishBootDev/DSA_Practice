@@ -1,8 +1,7 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+
+
+//  this approach works fine but passes only 17 out of 20 test cases for this  problem
 public class RandomFlipMatrix {
 
     int[][] mat;

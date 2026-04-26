@@ -1,3 +1,6 @@
+
+
+// this solution beats 100 percent
 public class ConsecutiveDataStream {
 
     private int t;

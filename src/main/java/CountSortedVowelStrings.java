@@ -20,7 +20,6 @@ public class CountSortedVowelStrings {
         for(int k = i; k <= 5; k++) {
             count += helper(n, k, len + 1);
         }
-
         return dp[i][len] = count;
     }
 }

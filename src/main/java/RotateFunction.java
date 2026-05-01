@@ -39,4 +39,37 @@ public class RotateFunction {
             end--;
         }
     }
+
+    Integer dp[];
+
+    public int maxRotateFunction2(int[] nums) {
+        this.dp = new Integer[nums.length];
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int c : nums) sum += c;
+
+        for (int i = 0; i < nums.length; i++) {
+            int ans = helper(i,nums,sum);
+            max = Math.max(ans, max);
+        }
+
+        return max;
+    }
+
+    // i am writing the recursion of the above problem
+    public int helper(int k, int arr[], int sum) {
+
+        int n = arr.length;
+        if(k == 0) {
+           int ans = 0;
+            for (int i = 0; i < arr.length; i++) {
+                ans += (i * arr[i]);
+            }
+            return ans;
+        }
+        if(dp [k] != null) return dp[k];
+        return dp[k] =  helper(k - 1 , arr, sum)+sum-n*arr[n-k];
+    }
 }
+
+// F(k)=F(k−1)+sum−n⋅nums[n−k]  ->   this is the observed recurrence relation between states

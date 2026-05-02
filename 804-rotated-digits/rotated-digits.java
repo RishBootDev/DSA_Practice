@@ -1,17 +1,38 @@
 class Solution {
+
     public int rotatedDigits(int n) {
 
         int count = 0;
-        
-        for(int i = 1; i <= n; i++) {
-            String str = String.valueOf(i);
-            if(str.contains("2") || str.contains("5") || str.contains("6") || str.contains("9")) {
-                if(!str.contains("3") && !str.contains("4") && !str.contains("7"))              count++;
+        for (int i = 1; i <= n; i++) {
+
+            if (helper(i) == 2) {
+                count++;
             }
         }
-
         return count;
     }
-}
 
-// we need a number that that contains 2 or 5 or 6 or 9 but do not contains 3,4,7
+    public int helper(int n) {
+
+        if (n < 10) {
+            if (n == 0 || n == 1 || n == 8) {
+                return 1;
+            }
+            if (n == 2 || n == 5 || n == 6 || n == 9) {
+                return 2;
+            }
+            return 0;
+        }
+
+        int left = helper(n / 10);
+        int right = helper(n % 10);
+
+        if (left == 0 || right == 0) {
+            return 0;
+        }
+        if (left == 2 || right == 2) {
+            return 2;
+        }
+        return 1;
+    }
+}

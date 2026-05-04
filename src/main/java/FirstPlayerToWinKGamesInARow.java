@@ -7,5 +7,7 @@ public class FirstPlayerToWinKGamesInARow {
         for (int i = 1; i < skills.length; i++) {
 
         }
+
+        return 0;
     }
 }

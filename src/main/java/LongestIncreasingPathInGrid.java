@@ -4,7 +4,7 @@ public class LongestIncreasingPathInGrid {
     private Integer dp[][];
 
 
-    // this was my approach and it corrrectly solved the problem
+    // this was my approach and it correctly solved the problem
     public int longestIncreasingPath(int[][] matrix) {
 
         dp = new Integer[matrix.length][matrix[0].length];

@@ -1,20 +1,21 @@
 public class ClimbingStairsTwo {
 
     public int climbStairs(int n, int[] costs) {
-        return climb(costs, 0);
+        return helper(n, costs);
     }
 
-    public int climb(int[] costs, int i) {
+    public int helper(int i, int cost[]) {
 
-        if (i >= costs.length) {
-            return 0;
-        }
+        if(i >= cost.length) return 0;
 
-        int cost1 = climb(costs, i + 1) + 1;
-        int cost2 = climb(costs, i + 2) + 4;
-        int cost3 = climb(costs, i + 3) + 9;
+        int cost1 = 0, cost2 = 0, cost3 = 0;
+        if(i + 1 < cost.length)
+            cost1 = helper(i + 1, cost) + 1 + cost[i + 1];
+        if(i + 2 < cost.length)
+            cost2 = helper(i + 2, cost) + 4 + cost[i + 2];
+        if(i + 3 < cost.length)
+            cost3 = helper(i + 3, cost) + 9 + cost[i + 3];
 
-        return costs[i] + Math.min(cost1,
-                Math.min(cost2, cost3));
+        return Math.min(cost1, Math.min(cost2, cost3));
     }
 }

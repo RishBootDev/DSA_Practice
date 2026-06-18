@@ -17,7 +17,7 @@ class Solution {
                 
             }
         }
-        System.out.println(ans);
+       // System.out.println(ans);
         Set<Integer> set = new HashSet<>(ans);
         return set.size();
     }

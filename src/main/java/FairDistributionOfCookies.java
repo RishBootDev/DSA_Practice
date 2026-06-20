@@ -9,9 +9,7 @@ public class FairDistributionOfCookies {
         return ans;
     }
 
-    public void helper(int[] cookies,
-                       int i,
-                       int[] children) {
+    public void helper(int[] cookies, int i, int[] children) {
 
         if (i == cookies.length) {
 

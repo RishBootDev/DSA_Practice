@@ -24,6 +24,8 @@ class CombinationIterator {
     }
 
     public void helper(String str, int i, StringBuilder sb) {
+
+        if (sb.length() > k) return;
         if(i == str.length()) {
             if (sb.length() == k) {
                 ans.add(sb.toString());

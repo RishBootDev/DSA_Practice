@@ -1,37 +1,51 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
-    
     public int[] nodesBetweenCriticalPoints(ListNode head) {
 
-        ListNode previous = head;
-        ListNode current = head.next;
+    int first = -1, last = -1;
+    int minDist = Integer.MAX_VALUE;
 
-        int first = -1;
-        int prev = -1;
-        int min = Integer.MAX_VALUE;
-        int index = 1;
+    ListNode prev = head;
+    ListNode curr = head.next;
+    ListNode next = head.next.next;
 
-        while(current.next != null) {
+    int index = 1; // curr index
 
-            if((current.val > previous.val && current.val > current.next.val) ||
-               (current.val < previous.val && current.val < current.next.val)) {
+    while (next != null) {
 
-                if(first == -1) {
-                    first = index;
-                } else {
-                    min = Math.min(min, index - prev);
-                }
+        boolean isCritical =
+                (curr.val > prev.val && curr.val > next.val) ||
+                (curr.val < prev.val && curr.val < next.val);
 
-                prev = index;
+        if (isCritical) {
+            if (first == -1) {
+                first = index;
+            } else {
+                minDist = Math.min(minDist, index - last);
             }
-            previous = current;
-            current = current.next;
-            index++;
+            last = index;
         }
 
-        if(first == -1 || first == prev) {
-            return new int[]{-1, -1};
-        }
-
-        return new int[]{min, prev - first};
+        prev = curr;
+        curr = next;
+        next = next.next;
+        index++;
     }
+
+    if (first == -1 || first == last) {
+        return new int[]{-1, -1};
+    }
+
+    return new int[]{minDist, last - first};
+}
+
 }

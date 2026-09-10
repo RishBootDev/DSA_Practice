@@ -3,7 +3,7 @@ import java.util.*;
 public class ClosestEqualElementsQueries {
 
 
-    // This is my initial approach to solve the problem and it clears 612 test cases out of 614 but
+     // This is my initial approach to solve the problem and it clears 612 test cases out of 614 but
     // this approach did not survived the constraints and eventually got time limit exceeded
     public List<Integer> solveQueries(int[] nums, int[] queries) {
 

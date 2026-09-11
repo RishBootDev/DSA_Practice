@@ -6,6 +6,7 @@ class MyHashSet {
     }
 
     public void add(int key) {
+        if(contains(key)) return;
         this.set.add(key);
     }
 

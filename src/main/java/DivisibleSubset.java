@@ -1,6 +1,4 @@
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,6 +40,4 @@ public class DivisibleSubset {
         if(!l1.getFirst().equals(-1)) return l1;
         return l2;
     }
-
-
 }

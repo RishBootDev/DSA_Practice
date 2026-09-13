@@ -31,4 +31,22 @@ public class JumpGame {
         }
         return true;
     }
+
+    // the above approach is the greedy version of the jump game
+    // i am trying to solve the jump game using the recursion
+    public boolean canReach(int arr[]) {
+        if(arr.length == 1) return true;
+        return helper(arr, 0);
+    }
+    public boolean helper(int arr[], int i) {
+        if(i >= arr.length - 1) return true;
+        if(arr[i] == 0) return false;
+
+        int last = i + arr[i];
+        boolean ans = false;
+        for (int j = i + 1; j <= last; j++) {
+            ans |= helper(arr, j);
+        }
+        return ans;
+    }
 }

@@ -23,4 +23,9 @@ public class MakeTheStringGreat {
 
         return ans.toString();
     }
+
+    public static void main(String[] args) {
+        System.out.println("Hanu and ved");
+
+    }
 }

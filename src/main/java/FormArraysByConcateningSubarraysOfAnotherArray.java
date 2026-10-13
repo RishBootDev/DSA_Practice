@@ -1,6 +1,5 @@
 public class FormArraysByConcateningSubarraysOfAnotherArray {
 
-
     public boolean canChoose(int[][] groups, int[] nums) {
         StringBuilder sb = new StringBuilder(" ");
         for (int c : nums) sb.append(c).append(" ");

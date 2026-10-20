@@ -20,7 +20,8 @@ public class PunishMentNumberOfInteger {
 
         sb.append(str.charAt(i));
         boolean first = helper(str, i + 1, sum, sb);
-        boolean second = helper(str, i + 1, sum + Integer.parseInt(sb.toString()), new StringBuilder());
+        boolean second = helper(str, i + 1, sum +
+                Integer.parseInt(sb.toString()), new StringBuilder());
         sb.deleteCharAt(sb.length() - 1);
         return first || second;
     }

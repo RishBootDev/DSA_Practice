@@ -42,6 +42,6 @@ public class GenerateBinaryStringsWithoutAdjacentZeroes {
 
     public static void main(String[] args) {
         GenerateBinaryStringsWithoutAdjacentZeroes ob= new GenerateBinaryStringsWithoutAdjacentZeroes();
-        System.out.println(ob.validStrings(1));
+        System.out.println(ob.validStrings(100));
     }
 }

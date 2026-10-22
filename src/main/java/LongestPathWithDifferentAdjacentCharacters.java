@@ -22,6 +22,8 @@ public class LongestPathWithDifferentAdjacentCharacters {
             max = Math.max(temp, max);
         }
         return max;
+
+       // return helper(tree, 0, new boolean[parent.length]);
     }
     public int helper(List<List<Integer>> tree, int start, boolean vis[]) {
 

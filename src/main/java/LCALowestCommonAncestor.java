@@ -17,13 +17,19 @@ public class LCALowestCommonAncestor {
         }
     }
 
-    public TreeNode lcs(TreeNode root, int p, int q) {
 
+    public TreeNode lca(TreeNode root, int p, int q) {
         if(root == null) return null;
+
         if(root.val == p || root.val == q) return root;
-        TreeNode left = lcs(root.left, p, q);
-        TreeNode right = lcs(root.right, p, q);
-        if(left != null || right != null) return root;
-        return null;
+
+        TreeNode left = lca(root.left, p, q);
+        TreeNode right = lca(root.right, p, q);
+
+        if(left != null && right != null) return root;
+
+        if(left != null) return left;
+        return right;
     }
+
 }

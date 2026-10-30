@@ -1,5 +1,4 @@
 class Solution {
-    
     public int closedIsland(int[][] grid) {
 
         boolean vis[][] = new boolean[grid.length][grid[0].length];

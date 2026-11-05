@@ -29,9 +29,4 @@ public class ReduceIt {
         List<Integer> result = new ArrayList<>(stack);
         System.out.println(result);
     }
-
-    public static void main(String[] args) {
-        List<Integer> list = List.of(20, 20, 10, 10);
-        reduce(list);
-    }
 }

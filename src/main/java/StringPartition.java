@@ -31,6 +31,5 @@ public class StringPartition {
 
         String s = "abcd";
         int k = 2;
-        obj.partition(s, k);
     }
 }
